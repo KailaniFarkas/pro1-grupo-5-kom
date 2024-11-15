@@ -7,64 +7,122 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
+/*--------------header----------------*/
 
-.header {
+
+.barra-fija {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+    width: 100%;
+    padding: 20px;
+    background-color: #e4ddd1;
+    background-attachment: fixed;
+    position: fixed;
 }
 
-
-.home{
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-image: url('../img/NONNA.png');
-    position: relative; /* Permite posicionar elementos hijos de manera absoluta */
-    width: 100vw;
-    height: 100vh;
+.hija1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    gap: 20px; 
+    padding: 10px;
+    background-color: #e4ddd1;
+    border-bottom: 2px solid #5a3a2d;
 }
 
 .logo {
-    position: absolute;
-    top: 47px;
-    left: 78px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    width: 120px;
+}
+
+.titulo_princ {
+    max-height: 100px;
+}
+
+.hija2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 10px 0;
+    background-color: #e4ddd1;
+    border-bottom: 2px solid #5a3a2d;
 }
 
 .opciones {
-    position: fixed; /* Fija el menú en la pantalla */
-    top: 35px; /* Ubica el menú en la parte superior */
-    right: 90px; /* Ubica el menú en la esquina derecha */
     display: flex;
-    gap: 15px; /* Espacio entre enlaces */
-    flex-direction: column;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.opciones a {
     text-decoration: none;
-    font-family: "Delius Swash Caps", cursive;
-    font-weight: 400;
-    font-style: normal;
-  
+    color: #5a3a2d;
+    font-size: 1em;
 }
 
-.a{
-    text-decoration: none;
+a:visited{
+    color:rgb(134, 64, 11);
+
 }
 
-.a:link{
-    color: black;
+a:hover{
+    color:rgb(255, 255, 255);
 }
 
-.a:visited{
-    color: #6c3b13;
+.hija3 {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: 20px 0;
+    background-color: #e4ddd1;
 }
 
-.a:hover{
-    color: #435686;
+.buscador {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 60%;
+    max-width: 800px;
+}
+
+.buscador input[type="text"] {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    flex: 1;
+}
+
+.buscador button {
+    padding: 8px 12px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #5a3a2d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buscador button:hover {
+    background-color: #7a4d34;
+}
+
+
+
+/*--------------parte dos: foto abuela----------------*/
+.imagen_abuela {
+    background-image: url(../img/NONNA.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
 }
