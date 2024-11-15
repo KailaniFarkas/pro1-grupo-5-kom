@@ -1,27 +1,70 @@
-.logo {
-    border-radius: 50%;
-    width: 180px;
-    padding: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    margin: 0px 0px 30px 0px;
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+
+.home{
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url('../img/NONNA.png');
+    position: relative; /* Permite posicionar elementos hijos de manera absoluta */
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    top: 47px;
+    left: 78px;
+    border-radius: 50%;
+    width: 120px;
 }
 
 .opciones {
+    position: fixed; /* Fija el menú en la pantalla */
+    top: 35px; /* Ubica el menú en la parte superior */
+    right: 90px; /* Ubica el menú en la esquina derecha */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 1180px;
-    padding: 0px;
-    margin: 0px 0px 0px 0px;
+    gap: 15px; /* Espacio entre enlaces */
+    flex-direction: column;
+    text-decoration: none;
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 400;
+    font-style: normal;
+  
+}
+
+.a{
+    text-decoration: none;
+}
+
+.a:link{
+    color: black;
+}
+
+.a:visited{
+    color: #6c3b13;
+}
+
+.a:hover{
+    color: #435686;
 }
