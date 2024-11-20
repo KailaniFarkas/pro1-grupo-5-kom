@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Delius+Swash+Caps&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
-</head>
+
 <body>
     <header class="header">
         <div class="barra-fija">
@@ -33,5 +33,33 @@
             </div>
         </div>
     </header>
+
+<main class="main-register">
+    <div class="form-container">
+        <h2>Registro</h2>
+        <form id="registerForm" action="./login.html" method="get">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="emailError">Por favor complete el campo</div>
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password">
+                <div class="error" id="passwordError">Por favor complete el campo</div>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Términos y condiciones</label>
+            </div>
+            <button class="registrar" type="submit">Registrar</button>
+        </form>
+        <div class="link">
+            <a href="login.html">Ya tengo una cuenta</a>
+        </div>
+</main>
+    
+<script src="./js/register.js"></script>
 </body>
+</html>
 </html>
