@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>La Nonna: receta</title>
+    <title>Recetas populares</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Delius+Swash+Caps&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
-</head>
+
 <body>
     <header class="header">
         <div class="barra-fija">
@@ -17,6 +17,7 @@
                 <img class="logo" src="./img/logo.jpg" alt="logo">
                 <img class="titulo_princ" src="./img/titulo.png" alt="titulo">
             </div>
+
              <div class="hija2">
                 <nav class="opciones">
                     <a href="index.html">Home</a>
@@ -25,13 +26,22 @@
                     <a href="register.html">Registro</a>
                 </nav>
              </div>   
+
             <div class="hija3">
                 <form class="buscador">
                     <input type="text" placeholder="Buscar recetas..." />
                     <button type="submit">Buscar</button>
                 </form>
             </div>
-        </div>
-    </header>
+        </header>
+
+        <main>
+            <img id="recipe-image" alt="Imagen de la receta">
+            <p><strong>Instrucciones:</strong> <span id="recipe-instructions"></span></p>
+            <p><strong>Tiempo de cocción:</strong> <span id="recipe-cooking-time"></span></p>
+            <div id="recipe-categories"></div>
+        </main>
+
+    <script src="./js/receta.js"></script>
 </body>
 </html>
