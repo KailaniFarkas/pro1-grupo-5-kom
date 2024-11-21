@@ -10,7 +10,13 @@ html, body {
     overflow-x: hidden;
 }
 /*--------------header----------------*/
-
+.header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #e4ddd1;
+}
 
 .barra-fija {
     display: flex;
@@ -167,29 +173,30 @@ a:hover{
  }
 
  /*--------------register----------------*/
-
- .main-register {
+.main-register {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e4ddd1;
-    
+    align-items: flex-start; 
+    margin-top: 120px; 
+    padding: 20px; 
+    background-color: #e4ddd1; 
+    min-height: calc(100vh - 100px); 
+    box-sizing: border-box; 
 }
 
-.form-container {
+.form-cont {
     background: #ffffff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     text-align: center;
-    margin: 260px 0 0 0 ;
+    margin: 0 auto;
+    margin-top: 280px;
 }
 
-.form-container h2 {
+
+.form-cont h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #5d4037; 
@@ -252,4 +259,11 @@ button:hover {
 .checkbox-group {
     text-align: left;
     margin-bottom: 25px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e4ddd1;
+    font-family: Arial, sans-serif;
 }

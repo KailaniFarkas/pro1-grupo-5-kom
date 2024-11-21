@@ -1,23 +1,20 @@
-const loginForm = document.querySelector('login-form');
+let email= document.getElementById("email")
+let contraseña= document.getElementById("contraseña")
+let loginForm= document.querySelector8 (".loginForm")
 
 
-loginForm.addEventListener('submit', (event) => {
-    event.preventDefault(); 
-
- 
-    const email = document.querySelector('#email').value;
-    const contraseña = document.querySelector('#contraseña').value;
 
 
-    if (email === '') {
-        alert('Por favor complete el campo email');
-        return;
-    }
-    if (contraseña === '') {
-        alert('Por favor complete el campo contraseña');
-        return;
-    }
+loginForm.addEventListener('submit', function (e) {
+   e .preventDefault();
+   if (email === '') {
+    alert('Por favor complete el campo email');
+    return;
 
+    }else if  (contraseña === '') {
+    alert('Por favor complete el campo contraseña');
+    return;
 
-    window.location.href = 'index.html';
+    } else {loginForm.submit ()}
+
 });
