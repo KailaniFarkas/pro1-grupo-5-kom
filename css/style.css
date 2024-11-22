@@ -263,10 +263,10 @@ body {
 .receta-index {
     margin-top: 280px;
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos pasen a una nueva fila */
-    justify-content: space-around; /* Espacio entre los elementos */
-    gap: 5px; /* Espaciado entre las tarjetas */
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 5px; 
+    width: 100%; 
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 10px;
@@ -274,9 +274,9 @@ body {
 
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-    gap: 20px; /* Espaciado entre tarjetas */
-    justify-content: center; /* Centra las columnas */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    justify-content: center; 
     margin: 10px auto;
     width: 90%;
     padding-top: 20px;
@@ -290,8 +290,9 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 5px; /* Espaciado interno solicitado */
+    padding: 5px; 
     box-sizing: border-box;
+    width:  20%;
 }
 
 .recipe-card img {
@@ -375,4 +376,77 @@ body {
 
 .footer_nombres{
     font-style: italic;
+}
+
+
+
+/* ---------detalle de recetas--------- */
+
+.article {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.artIMAGEN img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.artTEXTO {
+    flex: 1;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    height: 100%;
+    justify-items: space-around;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: bold;
+}
+
+.instrucciones {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.coc {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+}
+
+.categorias a {
+    text-decoration: none;
+    color: #ff5100;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.categorias a:hover {
+    color: #7f5023;
+    text-decoration: none;
 }
