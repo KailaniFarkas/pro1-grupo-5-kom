@@ -54,34 +54,31 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
     padding: 10px 0;
     background-color: #e4ddd1;
     border-bottom: 2px solid #5a3a2d;
 }
 
 .opciones {
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
 }
 
 .opciones a {
-    text-decoration: none;
-    color: #5a3a2d;
+    text-decoration: none; 
+    color: #6c3b13; 
     font-size: 1em;
+    font-weight: bold;
 }
 
-a:visited{
-    color:rgb(134, 64, 11);
-
+.opciones a:hover {
+    color: #a15e3e;
 }
 
-a:hover{
-    color:rgb(255, 255, 255);
-}
 
 .hija3 {
     display: flex;
