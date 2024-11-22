@@ -447,3 +447,41 @@ body {
     color: #7f5023;
     text-decoration: none;
 }
+
+/* ---------categories--------- */
+
+.category, .recipe {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.category a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.recipe img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.recipe h2 {
+    margin: 10px 0;
+}
+
+.recipe p {
+    font-size: 14px;
+    color: #555;
+}
+
+.recipe a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
