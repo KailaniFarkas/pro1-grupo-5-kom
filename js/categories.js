@@ -1,4 +1,4 @@
-// LA LISTA DE CATEGORIAS EN EL CITIO (DESDE LA API)
+// LA LISTA DE CATEGORIAS EN EL SITIO (DESDE LA API)
 
 fetch('https://dummyjson.com/recipes')
     .then(function(response) {
