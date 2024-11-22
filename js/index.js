@@ -1,15 +1,11 @@
-// Obtener el ID de la receta desde la URL
 let qs = location.search;
 let qsobj = new URLSearchParams(qs);
 let idreceta = qsobj.get("id");
 
-// Seleccionar la sección donde se mostrarán las recetas
 let recetasContainer = document.querySelector(".receta-index");
 let URL = `https://dummyjson.com/recipes`;
 
-// Verificar si se cargará una receta específica o la lista
 if (idreceta) {
-    // Si hay un ID en la URL, cargar los detalles de una receta específica
     fetch(`${URL}/${idreceta}`)
         .then(function (response) {
             return response.json();
@@ -37,7 +33,7 @@ if (idreceta) {
             recetasContainer.innerHTML = `<p>Error al cargar la receta.</p>`;
         });
 } else {
-    // Si no hay un ID, cargar la lista de recetas
+
     let recetasMostradas = 0;
     const recetasPorPagina = 10;
 
