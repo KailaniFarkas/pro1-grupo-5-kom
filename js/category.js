@@ -1,3 +1,5 @@
+// DESPUES DE CATEGORIES, CUANDO HACE CLICK APARECE ESTO.
+
 fetch(`https://dummyjson.com/recipes/category/${category}`)
     .then(function(response) {
         return response.json();
@@ -9,7 +11,8 @@ fetch(`https://dummyjson.com/recipes/category/${category}`)
         data.recipes.forEach(function(recipe) {
             const recipeCard = document.createElement("div");
             recipeCard.classList.add("recipe-card");
-            recipeCard.innerHTML = `
+            recipeCard.innerHTML = 
+            `
                 <img src="${recipe.thumbnail}" alt="${recipe.name}">
                 <h2>${recipe.name}</h2>
                 <p>Dificultad: ${recipe.difficulty}</p>
