@@ -1,23 +1,45 @@
-// LA LISTA DE CATEGORIAS EN EL SITIO (DESDE LA API)
+const categoriasSection = document.querySelector(".categorias");
+const URL = 'https://dummyjson.com/recipes/tags';
 
-fetch('https://dummyjson.com/recipes')
-    .then(function(response) {
+// Variable para construir el HTML
+let categoriaPlus = "";
+
+// Llamada a la API para obtener las categorías
+fetch(URL)
+    .then(function (response) {
+        if (!response.ok) throw new Error("Error al conectar con la API");
         return response.json();
     })
-    .then(function(data) {
-        console.log("Datos originales:", data);
+    .then(function (tags) {
+        console.log("Categorías recibidas:", tags);
 
-        const recipesByCategory = data.recipes.reduce(function(categories, recipe) {
-            var category = recipe.category || 'Sin categoría';
-            if (!categories[category]) {
-                categories[category] = [];
+        // Crear HTML dinámico con las categorías
+        tags.forEach(function (tag) {
+            for (let i in tags) {
+                const tag = tags[i]; // Accedemos a cada categoría
+                categoriaPlus += `
+                    <article class="category">
+                        <a href="./category.html?tag=${tag}" class="category-link">${tag}</a>
+                    </article>
+                `;
             }
-            categories[category].push(recipe);
-            return categories;
-        }, {});
-        
-        console.log("Recetas por categoría:", recipesByCategory);
+        });
+
+        // Insertar el HTML en el contenedor
+        categoriasSection.innerHTML = categoriaPlus;
+
+        // Agregar eventos a las categorías (opcional, ejemplo para animaciones)
+        const categoryElements = document.querySelectorAll(".category-link");
+        categoryElements.forEach(function (category) {
+            category.addEventListener("mouseover", function () {
+                category.style.textDecoration = "underline";
+            });
+            category.addEventListener("mouseout", function () {
+                category.style.textDecoration = "none";
+            });
+        });
     })
-    .catch(function(error) {
-        console.log("El error es: " + error);
+    .catch(function (error) {
+        console.error("Error al obtener las categorías:", error);
+        categoriasSection.innerHTML = "<p>Error al cargar las categorías. Intenta más tarde.</p>";
     });
