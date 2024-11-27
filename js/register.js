@@ -4,26 +4,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.getElementById("password");
     const emailError = document.getElementById("emailError");
     const passwordError = document.getElementById("passwordError");
+    const terminosCheckbox = document.getElementById("terms");
+    const terminosError = document.getElementById("terminosError")
 
-    //  CAMBIAR COSAS 
     let attemptedSubmit = false; 
 
     form.addEventListener("submit", (event) => {
         let isValid = true;
         attemptedSubmit = true;
 
-        if (emailInput.value.trim() === "") { //No sabemos que es trim cambiarlo
+        // Validar Email
+        if (emailInput.value.trim() === "") {
             emailError.style.display = "block";
             isValid = false;
         } else {
             emailError.style.display = "none";
         }
 
+        // Validar Contraseña
         if (passwordInput.value.trim() === "") {
             passwordError.style.display = "block";
             isValid = false;
         } else {
             passwordError.style.display = "none";
+        }
+
+        // Validar Checkbox de "Términos y condiciones"
+        if (!terminosCheckbox.checked) {
+            terminosError.style.display = "block"; 
+            isValid = false;
+        } else {
+            terminosError.style.display = "none"; 
         }
 
         if (!isValid) {
@@ -32,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "login.html";
         }
     });
-
 
     emailInput.addEventListener("input", () => {
         if (attemptedSubmit) {
@@ -50,6 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 passwordError.style.display = "block";
             } else {
                 passwordError.style.display = "none";
+            }
+        }
+    });
+
+    terminosCheckbox.addEventListener("change", () => {
+        if (attemptedSubmit) {
+            if (!terminosCheckbox.checked) {
+                terminosError.style.display = "block";
+            } else {
+                terminosError.style.display = "none";
             }
         }
     });
