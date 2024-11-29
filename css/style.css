@@ -544,3 +544,89 @@ body {
 .recipe a:hover {
     color: #333;
 }
+
+/*------------MEDIA QUERY--------------*/
+@media (max-width: 420px) {
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      padding-top: 0px;
+    }
+  
+    .hija1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .titulo_princ {
+        max-width: 280px;
+      }
+  
+    .hija2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; /* Separación entre los items */
+      margin-bottom: 10px;
+    }
+
+    .opciones {
+        display: flex;
+        flex-direction: column; /* Martu: A mi la verdad que no me gusta así :) */
+        gap: none;
+    }
+  
+    .hija2 a {
+      text-align: center;
+      width: 100%; 
+    }
+  
+    .hija3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .receta-index {
+        margin-top: 370px;
+    }
+
+    .hija3 input {
+      width: 70%; 
+      margin-right: 5px;
+    }
+  
+    .hija3 button {
+      width: auto;
+    }
+
+    .article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .instrucciones{
+        font-size: 18px;
+    }
+
+    .form-cont{
+        margin-top: 380px;
+
+    }
+  }
+  
