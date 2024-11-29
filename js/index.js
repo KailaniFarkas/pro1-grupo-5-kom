@@ -1,12 +1,12 @@
-let qs = location.search;
-let qsobj = new URLSearchParams(qs);
-let idreceta = qsobj.get("id");
+let query_s = location.search;
+let object = new URLSearchParams(query_s);
+let id_receta = object.get("id");
 
-let recetasContainer = document.querySelector(".receta-index");
+let recetas_container = document.querySelector(".receta-index");
 let URL = `https://dummyjson.com/recipes`;
 
-if (idreceta) {
-    fetch(`${URL}/${idreceta}`)
+if (id_receta) {
+    fetch(`${URL}/${id_receta}`)
         .then(function (response) {
             return response.json();
         })
@@ -26,16 +26,16 @@ if (idreceta) {
                     </div>
                 </article>
             `;
-            recetasContainer.innerHTML = recetaHTML;
+            recetas_container.innerHTML = recetaHTML;
         })
         .catch(function (error) {
             console.error("Error al cargar la receta:", error);
-            recetasContainer.innerHTML = `<p>Error al cargar la receta.</p>`;
+            recetas_container.innerHTML = `<p>Error al cargar la receta.</p>`;
         });
 } else {
 
-    let recetasMostradas = 0;
-    const recetasPorPagina = 10;
+    let recetas_mostradas = 0;
+    const recetas_por_pagina = 10;
 
     fetch(URL)
         .then(function (response) {
@@ -46,7 +46,7 @@ if (idreceta) {
 
             function cargarMasRecetas() {
                 let recetasHTML = "";
-                for (let i = recetasMostradas; i < recetasMostradas + recetasPorPagina && i < recetas.length; i++) {
+                for (let i = recetas_mostradas; i < recetas_mostradas + recetas_por_pagina && i < recetas.length; i++) {
                     recetasHTML += `
                         <div class="recipe-card">
                             <img src="${recetas[i].image || 'ruta/de/imagen/por/defecto.jpg'}" alt="${recetas[i].name}" class="recipe-card-img">
@@ -58,10 +58,10 @@ if (idreceta) {
                         </div>
                     `;
                 }
-                recetasContainer.innerHTML += recetasHTML;
-                recetasMostradas += recetasPorPagina;
+                recetas_container.innerHTML += recetasHTML;
+                recetas_mostradas += recetas_por_pagina;
 
-                if (recetasMostradas >= recetas.length) {
+                if (recetas_mostradas >= recetas.length) {
                     document.querySelector("#load-more").style.display = "none";
                 }
             }
@@ -71,6 +71,6 @@ if (idreceta) {
         })
         .catch(function (error) {
             console.error("Error al cargar las recetas:", error);
-            recetasContainer.innerHTML = `<p>Error al cargar las recetas.</p>`;
+            recetas_container.innerHTML = `<p>Error al cargar las recetas.</p>`;
         });
 }

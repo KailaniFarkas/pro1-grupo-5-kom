@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
         attemptedSubmit = true;
 
-        // Validar Email
+        // validando email
         if (emailInput.value.trim() === "") {
             emailError.style.display = "block";
             isValid = false;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             emailError.style.display = "none";
         }
 
-        // Validar Contraseña
+        // validando contra
         if (passwordInput.value.trim() === "") {
             passwordError.style.display = "block";
             isValid = false;
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             passwordError.style.display = "none";
         }
 
-        // Validar Checkbox de "Términos y condiciones"
+        // validando terminos y cond.
         if (!terminosCheckbox.checked) {
             terminosError.style.display = "block"; 
             isValid = false;

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let isValid = true;
         attemptedSubmit = true;
 
-        if (emailInput.value.trim() === "") { //No sabemos que es trim cambiarlo
+        if (emailInput.value.trim() === "") {
             emailError.style.display = "block";
             isValid = false;
         } else {

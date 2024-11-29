@@ -1,13 +1,13 @@
-const categoryRecipesSection = document.querySelector(".recipes-list");
-const categoryTitle = document.getElementById("category-title");
+const category_recipes_section = document.querySelector(".recipes-list");
+const category_title = document.getElementById("category-title");
 
-// Obtener el parámetro "tag" desde la URL
-const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get("tag");
+// parámetro "tag" desde el link
+const url_params = new URLSearchParams(window.location.search);
+const category = url_params.get("tag");
 
 let recipesHTML = "";
 
-// Verificar si se especificó una categoría
+// verificar si se especificó una categoría
 if (category) {
     const API_URL = `https://dummyjson.com/recipes/tag/${category}`;
 
@@ -19,10 +19,9 @@ if (category) {
         .then(function (data) {
             console.log("Recetas recibidas:", data);
 
-            // Mostrar la categoría en el título
-            categoryTitle.textContent = `Recetas para la categoría: ${category}`;
+            // mostrar la categoría en el título
+            category_title.textContent = `Recetas para la categoría: ${category}`;
 
-            // Verificar si hay recetas disponibles
             if (data.recipes && data.recipes.length > 0) {
                 data.recipes.forEach(function (recipe) {
                     recipesHTML += `
@@ -40,15 +39,14 @@ if (category) {
                 recipesHTML = "<p>No se encontraron recetas en esta categoría.</p>";
             }
 
-            // Insertar las recetas en el contenedor
-            categoryRecipesSection.innerHTML = recipesHTML;
+            // agregar las recetas
+            category_recipes_section.innerHTML = recipesHTML;
         })
         .catch(function (error) {
             console.error("Error al obtener las recetas:", error);
-            categoryRecipesSection.innerHTML = "<p>Error al cargar las recetas. Por favor, intenta más tarde.</p>";
+            category_recipes_section.innerHTML = "<p>Error al cargar las recetas. Por favor, intenta más tarde.</p>";
         });
 } else {
-    // Si no se especifica una categoría, mostrar un mensaje
-    categoryTitle.textContent = "Categoría no especificada";
-    categoryRecipesSection.innerHTML = "<p>Por favor, selecciona una categoría válida.</p>";
+    category_title.textContent = "Categoría no especificada";
+    category_recipes_section.innerHTML = "<p>Por favor, selecciona una categoría válida.</p>";
 }
