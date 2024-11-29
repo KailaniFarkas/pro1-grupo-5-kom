@@ -1,41 +1,25 @@
-const categorias_section = document.querySelector(".categorias");
-const URL = 'https://dummyjson.com/recipes/tags';
+fetch('https://dummyjson.com/recipes/tags')
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    console.log(data);
 
-let categoria_mas = "";
+    let listaRecetas = document.querySelector(".categorias");
 
-// llamamos a la API
-fetch(URL)
-    .then(function (response) {
-        if (!response.ok) throw new Error("Error al conectar con la API");
-        return response.json();
-    })
-    .then(function (tags) {
-        console.log("Categorías recibidas:", tags);
+    contentido = "";
 
-        tags.forEach(function (tag) {
-            for (let i in tags) {
-                const tag = tags[i]; // accedemos a cada categoría
-                categoria_mas += `
-                    <article class="category">
-                        <a href="./category.html?tag=${tag}" class="category-link">${tag}</a>
-                    </article>
-                `;
-            }
-        });
+    for(let i=0; i<data.length;i++){
+        contenido += `
+            <article>
+                <a href="./category.html?category-recipes=${data[i]}">${data[i]}</a>
+            </article>
+        `
+    };
+    
+    listaRecetas.innerHTML = contenido;
+})
 
-        categorias_section.innerHTML = categoria_mas;
-
-        const category_elements = document.querySelectorAll(".category-link");
-        category_elements.forEach(function (category) {
-            category.addEventListener("mouseover", function () {
-                category.style.text_decoration = "underline";
-            });
-            category.addEventListener("mouseout", function () {
-                category.style.text_decoration = "none";
-            });
-        });
-    })
-    .catch(function (error) {
-        console.error("Error al obtener las categorías:", error);
-        categorias_section.innerHTML = "<p>Error al cargar las categorías. Intenta más tarde.</p>";
-    });
+.catch(function (error) {
+    console.error ("Error: ", error);
+});

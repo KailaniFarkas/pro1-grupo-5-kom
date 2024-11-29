@@ -1,6 +1,6 @@
 let qs = location.search;
 const urlParams = new URLSearchParams(location.search);
-const recipeId = urlParams.get("tag");
+const recipeId = urlParams.get("data");
 
 
 function fetchRecipe() {

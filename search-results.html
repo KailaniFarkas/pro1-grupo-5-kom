@@ -26,24 +26,20 @@
                         <li><a href="login.html">Login</a></li>
                         <li> <a href="register.html">Registro</a></li>
                     </ul>
-             </div>  
-             
+             </div>   
             <div class="hija3">
-                <form class="buscador">
-                    <input type="text" placeholder="Buscar recetas..." />
+                <form action="./search-results.html" method="get" class="buscador" >
+                    <input name="buscador" type="text" placeholder="Buscar recetas..." />
                     <button type="submit">Buscar</button>
                 </form>
             </div>
         </div>
     </header>
+
     <main>
-        <section>
-            <div id="loader"> Buscando...</div>
-            <h1 class="titulobusqueda">Resultados de busqueda para:</h1>
-            <section class="resultados"></section>
-        </section>
+        <h1 id="titulo-resultados"></h1>
+        <section class="resultados"></section>
     </main>
-    <div id="recipes-container"></div>
 
     <footer class="pie">
         <p><span class="footer_nombres">Hecho por: </span> Kailani Farkas, Ornela Lo Presti y Martina Sciarrotta</p>

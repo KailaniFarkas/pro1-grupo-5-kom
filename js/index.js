@@ -53,7 +53,7 @@ if (id_receta) {
                             <div class="recipe-card-content"> 
                                 <h1>${recetas[i].name}</h1>
                                 <p>Dificultad: ${recetas[i].difficulty}</p>
-                                <a href="?id=${recetas[i].id}" class="detalleHover">Detalle de la receta</a>
+                                <a href="receta.html?id=${recetas[i].id}" class="detalleHover">Detalle de la receta</a>
                             </div>
                         </div>
                     `;
