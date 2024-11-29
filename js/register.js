@@ -1,76 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("registerForm");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const emailError = document.getElementById("emailError");
-    const passwordError = document.getElementById("passwordError");
-    const terminosCheckbox = document.getElementById("terms");
-    const terminosError = document.getElementById("terminosError")
+let formulario = document.querySelector("#registerForm");
+let emailInput = document.querySelector("#email");
+let passwordInput = document.querySelector("#password");
+let terminosCheckbox = document.querySelector("#terminos");
 
-    let attemptedSubmit = false; 
+let emailError = document.querySelector("#emailError");
+let passwordError = document.querySelector("#passwordError");
+let terminosError = document.querySelector("#terminosError")
 
-    form.addEventListener("submit", (event) => {
-        let isValid = true;
-        attemptedSubmit = true;
+formulario.addEventListener('submit', function(event){
+    
+    if (emailInput.value == ""){
+        event.preventDefault();
+        emailError.style.display = "block";
+    } 
+    if (passwordInput.value == ""){
+        event.preventDefault();
+        passwordError.style.display = "block";
+    }
 
-        // validando email
-        if (emailInput.value.trim() === "") {
-            emailError.style.display = "block";
-            isValid = false;
-        } else {
-            emailError.style.display = "none";
-        }
-
-        // validando contra
-        if (passwordInput.value.trim() === "") {
-            passwordError.style.display = "block";
-            isValid = false;
-        } else {
-            passwordError.style.display = "none";
-        }
-
-        // validando terminos y cond.
-        if (!terminosCheckbox.checked) {
-            terminosError.style.display = "block"; 
-            isValid = false;
-        } else {
-            terminosError.style.display = "none"; 
-        }
-
-        if (!isValid) {
-            event.preventDefault();
-        } else {
-            window.location.href = "login.html";
-        }
-    });
-
-    emailInput.addEventListener("input", () => {
-        if (attemptedSubmit) {
-            if (emailInput.value.trim() === "") {
-                emailError.style.display = "block";
-            } else {
-                emailError.style.display = "none";
-            }
-        }
-    });
-
-    passwordInput.addEventListener("input", () => {
-        if (attemptedSubmit) {
-            if (passwordInput.value.trim() === "") {
-                passwordError.style.display = "block";
-            } else {
-                passwordError.style.display = "none";
-            }
-        }
-    });
-
-    terminosCheckbox.addEventListener("change", () => {
-        if (attemptedSubmit) {
-            if (!terminosCheckbox.checked) {
-                terminosError.style.display = "block";
-            } else {
-                terminosError.style.display = "none";
-            }
-        }
-    });
+    if (!terminosCheckbox.checked){
+        event.preventDefault();
+        terminosError.style.display = "block";
+    }
 });
