@@ -14,7 +14,7 @@ if (id_receta) {
             let recetaHTML = `
                 <article class="article">
                     <div class="artIMAGEN">
-                        <img src="${data.image || 'ruta/de/imagen/por/defecto.jpg'}" alt="${data.name}" class="imagen">
+                        <img src="${data.image}" alt="${data.name}" class="imagen">
                     </div>
                     <div class="artTEXTO">
                         <h1 class="titulo">${data.name}</h1>
@@ -49,7 +49,7 @@ if (id_receta) {
                 for (let i = recetas_mostradas; i < recetas_mostradas + recetas_por_pagina && i < recetas.length; i++) {
                     recetasHTML += `
                         <div class="recipe-card">
-                            <img src="${recetas[i].image || 'ruta/de/imagen/por/defecto.jpg'}" alt="${recetas[i].name}" class="recipe-card-img">
+                            <img src="${recetas[i].image}" alt="${recetas[i].name}" class="recipe-card-img">
                             <div class="recipe-card-content"> 
                                 <h1>${recetas[i].name}</h1>
                                 <p>Dificultad: ${recetas[i].difficulty}</p>

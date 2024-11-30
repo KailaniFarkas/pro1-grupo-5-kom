@@ -7,11 +7,11 @@ fetch('https://dummyjson.com/recipes/tags')
 
     let listaRecetas = document.querySelector(".categorias");
 
-    contentido = "";
+    let contenido = "";
 
     for(let i=0; i<data.length;i++){
         contenido += `
-            <article>
+            <article class="article_category">
                 <a href="./category.html?category-recipes=${data[i]}">${data[i]}</a>
             </article>
         `
